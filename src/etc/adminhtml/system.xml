@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <section id="wsalogmenu" translate="label" type="text" sortOrder="920" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>WebShopApps Logger</label>
+            <tab>advanced</tab>
+            <resource>Magento_Backend::wsalogmenu</resource>
+            <group id="wsalogger" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Logger Configuration</label>
+                <comment>
+                    <![CDATA[
+							<div style="padding:10px;background-color:#fff;border:1px solid #ddd;margin-bottom:7px;">
+								<h3>Please ensure that you disable this logger after use</h3>
+								<br/>With this logger you can see diagnostic information on WebShopApps extensions.
+							</div>
+						]]>
+                </comment>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="admin_level" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minimum Log Level - Admin Panel</label>
+                    <source_model>WebShopApps\Logger\Model\Source\LogLevel</source_model>
+                    <comment>Switch on to see logs in admin under System->WebShopApps View Logs. Recommend use 'info' or above</comment>
+                </field>
+                <field id="system_level" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minimum Log Level - File System</label>
+                    <source_model>WebShopApps\Logger\Model\Source\LogLevel</source_model>
+                    <comment>Switch on to see logs in /var/log/system.log. For expert uses</comment>
+                </field>
+                <field id="view_all_extns" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>View all Extensions</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Use Logger in non-WebShopApps extensions (if supported)</comment>
+                </field>
+                <field id="debug_error_messages" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Debug Messages on Front End</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Display debug messages in errors for shipping (if supported) and package breakdown in cart (if applicable)</comment>
+                </field>
+            </group>
+            <group id="wsa_module_log" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Extension(s) to log output from</label>
+                <frontend_model>WebShopApps\Logger\Block\Config\Form\Fieldset\Modules\DisableLogging</frontend_model>
+            </group>
+        </section>
+    </system>
+</config>

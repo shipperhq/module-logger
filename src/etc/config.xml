@@ -7,6 +7,17 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
     <default>
+            <wsalogmenu>
+                <wsalogger>
+                    <enabled>0</enabled>
+                    <admin_level>-1</admin_level>
+                    <system_level>-1</system_level>
+                    <email_level>-1</email_level>
+                    <empty_system_log>0</empty_system_log>
+                    <view_all_extns>0</view_all_extns>
+                    <debug_error_messages>0</debug_error_messages>
+                </wsalogger>
+            </wsalogmenu>
     </default>
 </config>
 
