@@ -35,16 +35,44 @@ class Config extends AbstractConfig implements ConfigInterface
     public function getCodes()
     {
         return [
-            'logLevel' => [
-                LogLevel::EMERGENCY      => __(LogLevel::EMERGENCY),
-                LogLevel::ALERT          => __(LogLevel::ALERT),
-                LogLevel::CRITICAL       => __(LogLevel::CRITICAL),
-                LogLevel::ERROR          => __(LogLevel::ERROR),
-                LogLevel::WARNING        => __(LogLevel::WARNING),
-                LogLevel::NOTICE         => __(LogLevel::NOTICE),
-                LogLevel::INFO           => __(LogLevel::INFO),
-                LogLevel::DEBUG          => __(LogLevel::DEBUG),
-            ],
+            'date_format'   =>array(
+                'dd-mm-yyyy'    	    => 'd-m-Y',
+                'mm/dd/yyyy'    	    => 'm/d/Y',
+                'EEE dd-MM-yyyy'        => 'D d-m-Y'
+            ),
+            'short_date_format'   =>array(
+                'dd-mm-yyyy'   	    => 'd-m-Y',
+                'mm/dd/yyyy'    	    => 'm/d/Y',
+                'EEE dd-MM-yyyy'        => 'D d-m-Y'
+            ),
+            'datepicker_format' => array(
+                'dd-mm-yyyy'         => 'dd-mm-yy',
+                'mm/dd/yyyy'         => 'mm/dd/yy',
+                'EEE dd-MM-yyyy'        => 'DD d-MM-yy'
+
+            ),
+            'zend_date_format'     => array(
+                'dd-mm-yyyy'         => 'dd-MM-y',
+                'mm/dd/yyyy'         => 'MM/dd/y',
+                'EEE dd-MM-yyyy'        => 'E d-M-y'
+            ),
+            'cldr_date_format'      => array(
+                'en_US'            => array(
+                    'yMd'           => 'M/d/Y',
+                    'yMMMd'         => 'MMM d, Y',
+                    'yMMMEd'        => 'EEE, MMM d, Y',
+                    'yMEd'          => 'EEE, M/d/Y',
+                    'MMMd'          => 'MMM yy',
+                    'MMMEd'         => 'EEE, MMM d',
+                    'MEd'           => 'EEE, M/d',
+                    'Md'            => 'M/d',
+                    'yM'            => 'M/Y',
+                    'yMMM'          => 'MMM Y',
+                    'MMM'          => 'MMM',
+                    'E'             => 'EEE',
+                    'Ed'            => 'd EEE',
+                )
+            )
         ];
     }
 }
