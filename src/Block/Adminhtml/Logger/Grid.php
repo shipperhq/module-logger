@@ -31,42 +31,16 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
+namespace WebShopApps\Logger\Block\Adminhtml\Logger;
 
-namespace WebShopApps\Logger\Helper;
+use Magento\Backend\Block\Widget\Grid as WidgetGrid;
 
-use WebShopApps\Common\Model\ConfigInterface;
-use WebShopApps\Common\Helper\AbstractConfig;
-use Psr\Log\LogLevel;
-
-
-
-/**
- * Class Config
- */
-class Config extends AbstractConfig implements ConfigInterface
+class Grid extends WidgetGrid
 {
-    const SEVERITY_CRITICAL = 1;
-    const SEVERITY_MAJOR    = 2;
-    const SEVERITY_MINOR    = 3;
-    const SEVERITY_NOTICE   = 4;
-    const SEVERITY_NONE     = -1;
 
     /**
-     * Get configuration data of carrier
-     *
-     * @return array
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @var string
      */
-    public function getCodes()
-    {
-        return [
-            'logLevel'   =>array(
-                self::SEVERITY_CRITICAL => __('critical'),
-                self::SEVERITY_MAJOR    => __('warning'),
-                self::SEVERITY_MINOR    => __('info'),
-                self::SEVERITY_NOTICE   => __('debug'),
-                self::SEVERITY_NONE     => __('DISABLED')
-            ),
-        ];
-    }
+    protected $_template = 'WebShopApps_Logger::grid.phtml';
+
 }

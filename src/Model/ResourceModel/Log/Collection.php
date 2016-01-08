@@ -31,42 +31,22 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
+namespace WebShopApps\Logger\Model\ResourceModel\Log;
 
-namespace WebShopApps\Logger\Helper;
-
-use WebShopApps\Common\Model\ConfigInterface;
-use WebShopApps\Common\Helper\AbstractConfig;
-use Psr\Log\LogLevel;
-
-
-
-/**
- * Class Config
- */
-class Config extends AbstractConfig implements ConfigInterface
+class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
-    const SEVERITY_CRITICAL = 1;
-    const SEVERITY_MAJOR    = 2;
-    const SEVERITY_MINOR    = 3;
-    const SEVERITY_NOTICE   = 4;
-    const SEVERITY_NONE     = -1;
+
+    protected $_storeId = 0;
 
     /**
-     * Get configuration data of carrier
+     *  Define resource model
      *
-     * @return array
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @return void
      */
-    public function getCodes()
+    protected function _construct()
     {
-        return [
-            'logLevel'   =>array(
-                self::SEVERITY_CRITICAL => __('critical'),
-                self::SEVERITY_MAJOR    => __('warning'),
-                self::SEVERITY_MINOR    => __('info'),
-                self::SEVERITY_NOTICE   => __('debug'),
-                self::SEVERITY_NONE     => __('DISABLED')
-            ),
-        ];
+        parent::_construct();
+        $this->_init('WebShopApps\Logger\Model\Log', 'WebShopApps\Logger\Model\ResourceModel\Log');
     }
+
 }

@@ -31,42 +31,19 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-
-namespace WebShopApps\Logger\Helper;
-
-use WebShopApps\Common\Model\ConfigInterface;
-use WebShopApps\Common\Helper\AbstractConfig;
-use Psr\Log\LogLevel;
-
-
-
-/**
- * Class Config
- */
-class Config extends AbstractConfig implements ConfigInterface
+namespace WebShopApps\Logger\Controller\Adminhtml\Logger;
+class Index extends \WebShopApps\Logger\Controller\Adminhtml\Logger
 {
-    const SEVERITY_CRITICAL = 1;
-    const SEVERITY_MAJOR    = 2;
-    const SEVERITY_MINOR    = 3;
-    const SEVERITY_NOTICE   = 4;
-    const SEVERITY_NONE     = -1;
-
     /**
-     * Get configuration data of carrier
-     *
-     * @return array
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
-     */
-    public function getCodes()
+     * Index Action for Synchronize
+     * @return Void
+     * */
+
+    public function execute()
     {
-        return [
-            'logLevel'   =>array(
-                self::SEVERITY_CRITICAL => __('critical'),
-                self::SEVERITY_MAJOR    => __('warning'),
-                self::SEVERITY_MINOR    => __('info'),
-                self::SEVERITY_NOTICE   => __('debug'),
-                self::SEVERITY_NONE     => __('DISABLED')
-            ),
-        ];
+        $resultPage = $this->resultPageFactory->create();
+    //    $resultPage->setActiveMenu('WebShopApps_Logger::logger');
+        return $resultPage;
     }
 }
+?>

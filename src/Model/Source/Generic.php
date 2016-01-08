@@ -16,7 +16,7 @@
  */
 namespace WebShopApps\Logger\Model\Source;
 
-use WebShopApps\Logger\Helper\Config;
+use WebShopApps\Logger\Helper\Config as Config;
 
 class Generic implements \Magento\Framework\Option\ArrayInterface
 {
@@ -47,6 +47,8 @@ class Generic implements \Magento\Framework\Option\ArrayInterface
      */
     public function toOptionArray()
     {
+        $code = $this->code;
+        $logConfigIs = $this->loggerConfig;
         $configData = $this->loggerConfig->getCode($this->code);
         $arr = [];
         foreach ($configData as $code => $title) {

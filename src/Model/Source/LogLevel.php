@@ -13,7 +13,7 @@
 
 namespace WebShopApps\Logger\Model\Source;
 
-use WebShopApps\Logger\Model\Source\Generic;
+use WebShopApps\Logger\Model\Source\Generic as Generic;
 
 /**
  * Class LogLevel
