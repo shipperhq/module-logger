@@ -43,6 +43,8 @@ class Index extends \WebShopApps\Logger\Controller\Adminhtml\Logger
     {
         $resultPage = $this->resultPageFactory->create();
     //    $resultPage->setActiveMenu('WebShopApps_Logger::logger');
+        $resultPage->getConfig()->getTitle()->prepend(__('WebShopApps Logs'));
+        $resultPage->addBreadcrumb(__('WebShopApps Logs'), __('WebShopApps Logs'));
         return $resultPage;
     }
 }

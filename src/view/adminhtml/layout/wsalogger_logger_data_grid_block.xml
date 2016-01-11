@@ -36,7 +36,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="wsalogger_logger_log.grid.container">
-            <block class="Magento\Backend\Block\Widget\Grid" name="wsalogger_logger_log.grid" as="grid">
+            <block class="Magento\Backend\Block\Widget\Grid" name="wsalogger_logger_log.grid" as="grid"  template="WebShopApps_Logger::grid.phtml">
                 <arguments>
                     <argument name="id" xsi:type="string">loggerGrid</argument>
                     <argument name="dataSource" xsi:type="object">WebShopApps\Logger\Model\ResourceModel\Log\Collection</argument>
@@ -45,6 +45,7 @@
                 </arguments>
                 <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" name="adminhtml.system.variable.grid.columnSet" as="grid.columnSet">
                     <arguments>
+                        <argument name="filter_visibility" xsi:type="string">0</argument>
                         <argument name="rowUrl" xsi:type="array">
                             <item name="path" xsi:type="string">adminhtml/*/edit</item>
                             <item name="extraParamsTemplate" xsi:type="array">
@@ -97,9 +98,31 @@
                             <argument name="sortable" xsi:type="string">0</argument>
                             <argument name="width" xsi:type="string">100</argument>
                             <argument name="renderer" xsi:type="string">WebShopApps\Logger\Block\Adminhtml\Logger\Grid\Renderer\Actions</argument>
-                            <!--'renderer'  => 'wsalogger_adminhtml/log_grid_renderer_actions',-->
                         </arguments>
                     </block>
+                </block>
+                <block class="Magento\Backend\Block\Widget\Grid\Massaction" name="adminhtml.block.notification.massactions" as="grid.massaction">
+                    <arguments>
+                        <argument name="massaction_id_field" xsi:type="string">notification_id</argument>
+                        <argument name="form_field_name" xsi:type="string">notification_id</argument>
+                        <argument name="use_select_all" xsi:type="string">1</argument>
+                        <argument name="options" xsi:type="array">
+                            <item name="mark_as_read" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Mark as Read</item>
+                                <item name="url" xsi:type="string">*/*/massMarkAsRead</item>
+                            </item>
+                            <item name="remove" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Remove from View</item>
+                                <item name="url" xsi:type="string">*/*/massRemove</item>
+                                <item name="confirm" xsi:type="string" translate="true">Are you sure?</item>
+                            </item>
+                            <item name="remove" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Destroy All Stored Logs</item>
+                                <item name="url" xsi:type="string">*/*/massDestroy</item>
+                                <item name="confirm" xsi:type="string" translate="true">Are you sure?</item>
+                            </item>
+                        </argument>
+                    </arguments>
                 </block>
             </block>
         </referenceBlock>

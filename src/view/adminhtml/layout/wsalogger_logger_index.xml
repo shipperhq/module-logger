@@ -37,7 +37,7 @@
 <update handle="wsalogger_logger_data_grid_block"/>
 <body>
     <referenceContainer name="content">
-        <block class="WebShopApps\Logger\Block\Adminhtml\Logger" name="wsalogger_logger_log.grid.container" template="WebShopApps_Logger::grid.phtml"/>
+        <block class="WebShopApps\Logger\Block\Adminhtml\Logger" name="wsalogger_logger_log.grid.container"/>
     </referenceContainer>
 </body>
 </page>

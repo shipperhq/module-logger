@@ -46,30 +46,9 @@ class Logger extends Container
     {
         $this->_controller = 'wsalogger';
         $this->_blockGroup = 'WebShopApps_Logger';
-        $this->_headerText = __('WebShopApps View Logs');
+        $this->_headerText = __('WebShopApps Logs');
         parent::_construct();
 
-//        $this->buttonList->remove('add');
-        $url = $this->getUrl('wsalogger/logger/index');
-        $this->buttonList->add(
-            'refresh',
-            [
-                'label' => __('Reload Synchronize Data'),
-                'onclick' => 'setLocation(\'' . $url . '\')',
-                'class' => 'add primary'
-            ],
-            0
-        );
-//        $synchurl = $this->getUrl('shipperhq/synchronize/synchronize');
-//        $message = __('Are you sure you are ready to synchronize?');
-//        $this->buttonList->add(
-//            'synchronize',
-//            [
-//                'label' => __('Synchronize with ShipperHQ'),
-//                'onclick' => 'confirmSetLocation(\'' . $message . '\', \'' . $synchurl . '\')',
-//                'class' => 'add primary'
-//            ],
-//            0
-//        );
+        $this->buttonList->remove('add');
     }
 }
