@@ -42,6 +42,9 @@ class Index extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
+        $resultPage->setActiveMenu(
+            'ShipperHQ_Logger::logger'
+        );
         $resultPage->getConfig()->getTitle()->prepend(__('ShipperHQ Logs'));
         $resultPage->addBreadcrumb(__('ShipperHQ Logs'), __('ShipperHQ Logs'));
         return $resultPage;

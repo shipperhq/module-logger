@@ -41,7 +41,7 @@ class MarkAsRead extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
     public function execute()
     {
         if ($id = $this->getRequest()->getParam('id')) {
-            $model = $this->_objectManager->create('WebShopApps\Logger\Model\Log')->load($id);
+            $model = $this->_objectManager->create('ShipperHQ\Logger\Model\Log')->load($id);
 
             if (!$model->getId()) {
                 $this->_redirect('adminhtml/*/');
