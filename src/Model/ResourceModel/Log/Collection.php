@@ -1,6 +1,7 @@
 <?php
 /**
- * WebShopApps
+ *
+ * ShipperHQ
  *
  * NOTICE OF LICENSE
  *
@@ -18,20 +19,19 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * WebShopApps Logger
+ * Shipper HQ Shipping
  *
- * @category WebShopApps
- * @package WebShopApps_Logger
- * @copyright Copyright (c) 2015 Zowta LLC (http://www.WebShopApps.com)
+ * @category ShipperHQ
+ * @package ShipperHQ_Logger
+ * @copyright Copyright (c) 2015 Zowta LLC (http://www.ShipperHQ.com)
  * @license http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @author WebShopApps Team sales@webshopapps.com
- *
+ * @author ShipperHQ Team sales@shipperhq.com
  */
 /**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace WebShopApps\Logger\Model\ResourceModel\Log;
+namespace ShipperHQ\Logger\Model\ResourceModel\Log;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -46,7 +46,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     protected function _construct()
     {
         parent::_construct();
-        $this->_init('WebShopApps\Logger\Model\Log', 'WebShopApps\Logger\Model\ResourceModel\Log');
+        $this->_init('ShipperHQ\Logger\Model\Log', 'ShipperHQ\Logger\Model\ResourceModel\Log');
     }
 
 }

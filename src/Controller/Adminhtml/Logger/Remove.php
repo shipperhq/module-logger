@@ -1,6 +1,7 @@
 <?php
 /**
- * WebShopApps
+ *
+ * ShipperHQ
  *
  * NOTICE OF LICENSE
  *
@@ -18,22 +19,21 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * WebShopApps Logger
+ * Shipper HQ Shipping
  *
- * @category WebShopApps
- * @package WebShopApps_Logger
- * @copyright Copyright (c) 2015 Zowta LLC (http://www.WebShopApps.com)
+ * @category ShipperHQ
+ * @package ShipperHQ_Logger
+ * @copyright Copyright (c) 2015 Zowta LLC (http://www.ShipperHQ.com)
  * @license http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @author WebShopApps Team sales@webshopapps.com
- *
+ * @author ShipperHQ Team sales@shipperhq.com
  */
 /**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace WebShopApps\Logger\Controller\Adminhtml\Logger;
+namespace ShipperHQ\Logger\Controller\Adminhtml\Logger;
 
-class Remove extends \WebShopApps\Logger\Controller\Adminhtml\Logger
+class Remove extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
 {
     /**
      * @return void
@@ -41,7 +41,7 @@ class Remove extends \WebShopApps\Logger\Controller\Adminhtml\Logger
     public function execute()
     {
         if ($id = $this->getRequest()->getParam('id')) {
-            $model = $this->_objectManager->create('WebShopApps\Logger\Model\Log')->load($id);
+            $model = $this->_objectManager->create('ShipperHQ\Logger\Model\Log')->load($id);
 
             if (!$model->getId()) {
                 $this->_redirect('adminhtml/*/');

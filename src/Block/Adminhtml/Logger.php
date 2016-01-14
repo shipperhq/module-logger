@@ -1,6 +1,7 @@
 <?php
 /**
- * WebShopApps
+ *
+ * ShipperHQ
  *
  * NOTICE OF LICENSE
  *
@@ -18,20 +19,19 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * WebShopApps Logger
+ * Shipper HQ Shipping
  *
- * @category WebShopApps
- * @package WebShopApps_Logger
- * @copyright Copyright (c) 2015 Zowta LLC (http://www.WebShopApps.com)
+ * @category ShipperHQ
+ * @package ShipperHQ_Logger
+ * @copyright Copyright (c) 2015 Zowta LLC (http://www.ShipperHQ.com)
  * @license http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @author WebShopApps Team sales@webshopapps.com
- *
+ * @author ShipperHQ Team sales@shipperhq.com
  */
 /**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace WebShopApps\Logger\Block\Adminhtml;
+namespace ShipperHQ\Logger\Block\Adminhtml;
 
 use Magento\Backend\Block\Widget\Grid\Container;
 
@@ -44,9 +44,9 @@ class Logger extends Container
      */
     protected function _construct()
     {
-        $this->_controller = 'wsalogger';
-        $this->_blockGroup = 'WebShopApps_Logger';
-        $this->_headerText = __('WebShopApps Logs');
+        $this->_controller = 'shqlogger';
+        $this->_blockGroup = 'ShipperHQ_Logger';
+        $this->_headerText = __('ShipperHQ Logs');
         parent::_construct();
 
         $this->buttonList->remove('add');
