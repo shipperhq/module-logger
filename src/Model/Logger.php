@@ -42,16 +42,13 @@ use ShipperHQ\Logger\Helper\Config;
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class Logger extends  \Magento\Framework\Model\AbstractModel
+class Logger extends  \Monolog\Logger//\Magento\Framework\Model\AbstractModel
 {
     /**
      * @var Config
      */
     protected $configHelper;
 
-    /**
-     * @param Config $configHelper
-     */
     public function __construct(Config $configHelper) {
          $this->$configHelper = $configHelper;
     }
