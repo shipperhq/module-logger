@@ -31,22 +31,21 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace ShipperHQ\Logger\Model;
+namespace ShipperHQ\Logger\Model\Logger;
 
-/**
- * Backend event observer
- */
-class Observer
+use Monolog\Logger;
+
+class Critical extends \Magento\Framework\Logger\Handler\Base
 {
+    /**
+     * Logging level
+     * @var int
+     */
+    protected $loggerType = Logger::CRITICAL;
 
     /**
-     * @param \Magento\Framework\App\Cache\Frontend\Pool $cacheFrontendPool
+     * File name
+     * @var string
      */
-    public function __construct(
-    //    \Magento\Framework\App\Cache\Frontend\Pool $cacheFrontendPool
-    ) {
-     //   $this->cacheFrontendPool = $cacheFrontendPool;
-    }
-
-
+    protected $fileName = '/var/log/shipperhq.log';
 }

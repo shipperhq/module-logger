@@ -90,7 +90,6 @@ class Log extends AbstractModel
             'url'			=> $url
         );
 
-
         return $this->getResource()->parse($this, $feedData);
     }
 

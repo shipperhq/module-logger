@@ -34,8 +34,6 @@
 
 namespace ShipperHQ\Logger\Model;
 
-use ShipperHQ\Logger\Helper\Config;
-
 
 /**
  * WSA Logger implementation
@@ -44,15 +42,5 @@ use ShipperHQ\Logger\Helper\Config;
  */
 class Logger extends  \Monolog\Logger//\Magento\Framework\Model\AbstractModel
 {
-    /**
-     * @var Config
-     */
-    protected $configHelper;
-
-    public function __construct(Config $configHelper) {
-         $this->$configHelper = $configHelper;
-    }
-
-
 
 }
