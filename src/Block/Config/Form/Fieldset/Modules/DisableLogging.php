@@ -103,7 +103,7 @@ class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
         foreach ($modules as $moduleName) {
-            if ($moduleName==='Mage_Adminhtml' ||$moduleName==='WebShopApps_Common' || $moduleName==='ShipperHQ_Logger'
+            if ($moduleName==='Mage_Adminhtml' ||$moduleName==='ShipperHQ_Common' || $moduleName==='ShipperHQ_Logger'
                 || stripos($moduleName,'Mage_') !== false) {
                 continue;
             }

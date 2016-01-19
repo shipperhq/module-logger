@@ -35,8 +35,8 @@
 namespace ShipperHQ\Logger\Helper;
 
 use Magento\Framework\Event\ManagerInterface;
-use WebShopApps\Common\Model\ConfigInterface;
-use WebShopApps\Common\Helper\Data;
+use ShipperHQ\Common\Model\ConfigInterface;
+use ShipperHQ\Common\Helper\Data;
 use Psr\Log\LogLevel;
 
 /**
@@ -68,7 +68,7 @@ class Log extends \Magento\Framework\App\Helper\AbstractHelper
 
     public function __construct(
         \Magento\Framework\Event\ManagerInterface $eventManager,
-        \WebShopApps\Common\Helper\Data $dataHelper,
+        \ShipperHQ\Common\Helper\Data $dataHelper,
         \ShipperHQ\Logger\Model\Logger $logger
     ) {
         $this->logger = $logger;

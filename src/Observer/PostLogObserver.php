@@ -158,7 +158,7 @@ class PostLogObserver implements ObserverInterface
 //
 //                $emailTemplate->send(Mage::getStoreConfig('wsalogmenu/wsalog/contact_email'),'', $emailTemplateVariables);
 //            } else {
-//                Mage::log("WebShopApps Logger - Email Log Can Not Be Sent. Email Address/Subject/Name Not Entered in Config");
+//                Mage::log("ShipperHQ Logger - Email Log Can Not Be Sent. Email Address/Subject/Name Not Entered in Config");
 //            }
         }
     }

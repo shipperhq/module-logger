@@ -34,8 +34,8 @@
 
 namespace ShipperHQ\Logger\Helper;
 
-use WebShopApps\Common\Model\ConfigInterface;
-use WebShopApps\Common\Helper\AbstractConfig;
+use ShipperHQ\Common\Model\ConfigInterface;
+use ShipperHQ\Common\Helper\AbstractConfig;
 use Psr\Log\LogLevel;
 
 
