@@ -1,6 +1,7 @@
 <?php
 /**
- * WebShopApps
+ *
+ * ShipperHQ
  *
  * NOTICE OF LICENSE
  *
@@ -18,20 +19,19 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * WebShopApps Logger
+ * Shipper HQ Shipping
  *
- * @category WebShopApps
- * @package WebShopApps_Logger
- * @copyright Copyright (c) 2015 Zowta LLC (http://www.WebShopApps.com)
+ * @category ShipperHQ
+ * @package ShipperHQ_Logger
+ * @copyright Copyright (c) 2015 Zowta LLC (http://www.ShipperHQ.com)
  * @license http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @author WebShopApps Team sales@webshopapps.com
- *
+ * @author ShipperHQ Team sales@shipperhq.com
  */
 /**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace WebShopApps\Logger\Block\Config\Form\Fieldset\Modules;
+namespace ShipperHQ\Logger\Block\Config\Form\Fieldset\Modules;
 
 class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
 {
@@ -99,11 +99,11 @@ class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
         sort($modules);
 
         $viewAllExtns = $this->_scopeConfig->isSetFlag(
-            'wsalogmenu/wsalogger/view_all_extns',
+            'shqlogmenu/shqlogger/view_all_extns',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
         foreach ($modules as $moduleName) {
-            if ($moduleName==='Mage_Adminhtml' ||$moduleName==='WebShopApps_Common' || $moduleName==='WebShopApps_Logger'
+            if ($moduleName==='Mage_Adminhtml' ||$moduleName==='ShipperHQ_Common' || $moduleName==='ShipperHQ_Logger'
                 || stripos($moduleName,'Mage_') !== false) {
                 continue;
             }
@@ -169,7 +169,7 @@ class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
     protected function _getFieldHtml($fieldset, $moduleName)
     {
         $configData = $this->getConfigData();
-        $path = 'wsalogmenu/wsa_module_log/' . $moduleName;
+        $path = 'shqlogmenu/shq_module_log/' . $moduleName;
         //TODO: move as property of form
         if (isset($configData[$path])) {
             $data = $configData[$path];
@@ -185,7 +185,7 @@ class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
             $moduleName,
             'select',
             [
-                'name' => 'groups[wsa_module_log][fields][' . $moduleName . '][value]',
+                'name' => 'groups[shq_module_log][fields][' . $moduleName . '][value]',
                 'label' => $moduleName,
                 'value' => $data,
                 'values' => $this->_getValues(),

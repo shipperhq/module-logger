@@ -1,2 +1,2 @@
 # m2logger
-WebShopApps Logger
+ShipperHQ Logger

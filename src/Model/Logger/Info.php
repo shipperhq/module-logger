@@ -31,22 +31,21 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace ShipperHQ\Logger\Model\ResourceModel\Log;
+namespace ShipperHQ\Logger\Model\Logger;
 
-class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
+use Monolog\Logger;
+
+class Info extends \Magento\Framework\Logger\Handler\Base
 {
-
-    protected $_storeId = 0;
+    /**
+     * Logging level
+     * @var int
+     */
+    protected $loggerType = Logger::INFO;
 
     /**
-     *  Define resource model
-     *
-     * @return void
+     * File name
+     * @var string
      */
-    protected function _construct()
-    {
-        parent::_construct();
-        $this->_init('ShipperHQ\Logger\Model\Log', 'ShipperHQ\Logger\Model\ResourceModel\Log');
-    }
-
+    protected $fileName = '/var/log/shipperhq.log';
 }
