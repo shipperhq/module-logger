@@ -74,7 +74,7 @@
                     <comment>Display debug messages in errors for shipping (if supported) and package breakdown in cart (if applicable)</comment>
                 </field>
             </group>
-            <group id="wsa_module_log" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="shq_module_log" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Extension(s) to log output from</label>
                 <frontend_model>ShipperHQ\Logger\Block\Config\Form\Fieldset\Modules\DisableLogging</frontend_model>
             </group>

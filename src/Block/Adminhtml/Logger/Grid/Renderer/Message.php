@@ -31,22 +31,41 @@
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace ShipperHQ\Logger\Model;
+namespace ShipperHQ\Logger\Block\Adminhtml\Logger\Grid\Renderer;
 
-/**
- * Backend event observer
- */
-class Observer
+class Message extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer
 {
+    /**
+     * @var \Magento\Framework\Url\Helper\Data
+     */
+//    protected $_urlHelper;
 
     /**
-     * @param \Magento\Framework\App\Cache\Frontend\Pool $cacheFrontendPool
+     * @param \Magento\Backend\Block\Context $context
+     * @param \Magento\Framework\Url\Helper\Data $urlHelper
+     * @param array $data
      */
-    public function __construct(
-    //    \Magento\Framework\App\Cache\Frontend\Pool $cacheFrontendPool
-    ) {
-     //   $this->cacheFrontendPool = $cacheFrontendPool;
+//    public function __construct(
+//        \Magento\Backend\Block\Context $context,
+//        \Magento\Framework\Url\Helper\Data $urlHelper,
+//        array $data = []
+//    ) {
+//        $this->_urlHelper = $urlHelper;
+//        parent::__construct($context, $data);
+//    }
+
+    /**
+     * Renders grid column
+     *
+     * @param   \Magento\Framework\DataObject $row
+     * @return  string
+     */
+    public function render(\Magento\Framework\DataObject $row)
+    {
+        $dots = '';
+        if(strlen($row->getDescription())>512) { $dots = ' . . . '; }
+        return '<span class="grid-row-title">' . $row->getTitle() . '</span>'
+        . ($row->getDescription() ? '<br />' . substr($row->getDescription(), 0, 512) . $dots : '');
     }
-
-
 }
+

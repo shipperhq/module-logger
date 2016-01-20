@@ -169,7 +169,7 @@ class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
     protected function _getFieldHtml($fieldset, $moduleName)
     {
         $configData = $this->getConfigData();
-        $path = 'shqlogmenu/wsa_module_log/' . $moduleName;
+        $path = 'shqlogmenu/shq_module_log/' . $moduleName;
         //TODO: move as property of form
         if (isset($configData[$path])) {
             $data = $configData[$path];
@@ -185,7 +185,7 @@ class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
             $moduleName,
             'select',
             [
-                'name' => 'groups[wsa_module_log][fields][' . $moduleName . '][value]',
+                'name' => 'groups[shq_module_log][fields][' . $moduleName . '][value]',
                 'label' => $moduleName,
                 'value' => $data,
                 'values' => $this->_getValues(),

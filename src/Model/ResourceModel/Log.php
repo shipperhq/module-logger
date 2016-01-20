@@ -96,7 +96,8 @@ class Log extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
         $connection = $this->getConnection();
         try {
             $connection->truncateTable($this->getMainTable());
-        }catch(Exception $e){
+        }
+        catch(\Exception $e){
             //TODO
           //  Mage::logException("ShipperHQ Logger Exception");
           //  Mage::logException($e);
