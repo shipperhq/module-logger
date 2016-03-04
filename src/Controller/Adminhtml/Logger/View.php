@@ -32,38 +32,26 @@
  * See COPYING.txt for license details.
  */
 namespace ShipperHQ\Logger\Controller\Adminhtml\Logger;
-
-class MassMarkAsRead extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
+class View extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
 {
     /**
-     * @return void
-     */
+     *
+     * @return Void
+     * */
+
     public function execute()
     {
-        $ids = $this->getRequest()->getParam('notification');
-        if (!is_array($ids)) {
-            $this->messageManager->addError(__('Please select logs.'));
-        } else {
-            try {
-                foreach ($ids as $id) {
-                    $model = $this->_objectManager->create('ShipperHQ\Logger\Model\Log')->load($id);
-                    if ($model->getId()) {
-                        $model->setIsRead(1)->save();
-                    }
-                }
-                $this->messageManager->addSuccess(
-                    __('A total of %1 record(s) have been marked as read.', count($ids))
-                );
-            } catch (\Magento\Framework\Exception\LocalizedException $e) {
-                $this->messageManager->addError($e->getMessage());
-            } catch (\Exception $e) {
-                $this->messageManager->addException(
-                    $e,
-                    __("We couldn't mark the notification as read because of an error.")
-                );
-            }
-        }
-        $this->_redirect('shqlogger/*/index');
-    }
+        $id = $this->getRequest()->getParam('notification_id');
+        $model = $this->_objectManager->create('ShipperHQ\Logger\Model\Log');
 
+        if ($id) {
+            $model->load($id);
+        }
+
+        $this->_view->loadLayout();
+        $this->_view->getLayout()->getBlock('shqlogger_logger_log_view')->setData('log', $model);
+        $this->_view->renderLayout();
+
+    }
 }
+?>

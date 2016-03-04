@@ -44,7 +44,7 @@ class Remove extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
             $model = $this->_objectManager->create('ShipperHQ\Logger\Model\Log')->load($id);
 
             if (!$model->getId()) {
-                $this->_redirect('adminhtml/*/');
+                $this->_redirect('shqlogger/*/index');
                 return;
             }
 
@@ -57,9 +57,9 @@ class Remove extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
                 $this->messageManager->addException($e, __("An error occurred while removing log."));
             }
 
-            $this->_redirect('adminhtml/*/');
+            $this->_redirect('shqlogger/*/index');
             return;
         }
-        $this->_redirect('adminhtml/*/');
+        $this->_redirect('shqlogger/*/index');
     }
 }
