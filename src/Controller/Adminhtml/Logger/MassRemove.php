@@ -58,7 +58,8 @@ class MassRemove extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
                 $this->messageManager->addException($e, __("We couldn't remove the messages because of an error."));
             }
         }
-        $this->getResponse()->setRedirect($this->_redirect->getRedirectUrl($this->getUrl('*')));
+
+        $this->_redirect('shqlogger/*/index');
     }
 
 }

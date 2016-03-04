@@ -47,9 +47,9 @@
                     <arguments>
                         <argument name="filter_visibility" xsi:type="string">0</argument>
                         <argument name="rowUrl" xsi:type="array">
-                            <item name="path" xsi:type="string">adminhtml/*/edit</item>
+                            <item name="path" xsi:type="string">shqlogger/logger/view</item>
                             <item name="extraParamsTemplate" xsi:type="array">
-                                <item name="variable_id" xsi:type="string">getId</item>
+                                <item name="notification_id" xsi:type="string">getId</item>
                             </item>
                         </argument>
                     </arguments>
@@ -117,7 +117,7 @@
                                 <item name="url" xsi:type="string">*/*/massRemove</item>
                                 <item name="confirm" xsi:type="string" translate="true">Are you sure?</item>
                             </item>
-                            <item name="remove" xsi:type="array">
+                            <item name="destroy" xsi:type="array">
                                 <item name="label" xsi:type="string" translate="true">Destroy All Stored Logs</item>
                                 <item name="url" xsi:type="string">*/*/massDestroy</item>
                                 <item name="confirm" xsi:type="string" translate="true">Are you sure?</item>
