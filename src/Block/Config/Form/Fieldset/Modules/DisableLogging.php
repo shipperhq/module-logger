@@ -55,20 +55,11 @@ class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
      */
     protected $_moduleList;
 
-
-    /**
-     * Core store config
-     *
-     * @var \Magento\Framework\App\Config\ScopeConfigInterface
-     */
-    protected $scopeConfig;
-
     /**
      * @param \Magento\Backend\Block\Context $context
      * @param \Magento\Backend\Model\Auth\Session $authSession
      * @param \Magento\Framework\View\Helper\Js $jsHelper
      * @param \Magento\Framework\Module\ModuleListInterface $moduleList
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
      * @param array $data
      */
     public function __construct(
@@ -76,11 +67,9 @@ class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
         \Magento\Backend\Model\Auth\Session $authSession,
         \Magento\Framework\View\Helper\Js $jsHelper,
         \Magento\Framework\Module\ModuleListInterface $moduleList,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         array $data = []
     ) {
         parent::__construct($context, $authSession, $jsHelper, $data);
-        $this->scopeConfig = $scopeConfig;
         $this->_moduleList = $moduleList;
     }
 
