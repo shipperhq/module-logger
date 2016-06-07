@@ -5,3 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [20.0.1] - 2016-04-25
 ### Added
 - Fixed composer file
+
+## [20.0.2] - 2016-06-07
+### Added
+- Prevent logging if disabled
+
