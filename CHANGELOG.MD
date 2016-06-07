@@ -6,7 +6,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Fixed composer file
 
-## [20.0.3] - 2016-06-07
+## [20.0.3] - 2016-05-11
+### Added
+- SHQ16-864 use URNs for configuration XSDs
+
+## [20.0.4] - 2016-06-07
 ### Added
 - Prevent logging if disabled
 
