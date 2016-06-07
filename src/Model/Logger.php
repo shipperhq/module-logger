@@ -40,7 +40,7 @@ namespace ShipperHQ\Logger\Model;
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class Logger extends  \Monolog\Logger//\Magento\Framework\Model\AbstractModel
+class Logger extends  \Monolog\Logger
 {
     const SEVERITY_CRITICAL = 1;
     const SEVERITY_MAJOR    = 2;
@@ -86,7 +86,7 @@ class Logger extends  \Monolog\Logger//\Magento\Framework\Model\AbstractModel
     public function debug($message, array $context = array())
     {
         if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
-            return parent::debug($message, $context);
+            return false;
         }
 
         return $this->logMessage($message, $context, self::SEVERITY_NOTICE);
@@ -105,7 +105,7 @@ class Logger extends  \Monolog\Logger//\Magento\Framework\Model\AbstractModel
     public function info($message, array $context = array())
     {
         if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
-            return parent::info($message, $context);
+           return false;
         }
 
         return $this->logMessage($message, $context, self::SEVERITY_MINOR);
@@ -123,7 +123,7 @@ class Logger extends  \Monolog\Logger//\Magento\Framework\Model\AbstractModel
     public function warning($message, array $context = array())
     {
         if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
-            return parent::warning($message, $context);
+            return false;
         }
 
         return $this->logMessage($message, $context, self::SEVERITY_MAJOR);
@@ -141,7 +141,7 @@ class Logger extends  \Monolog\Logger//\Magento\Framework\Model\AbstractModel
     public function critical($message, array $context = array())
     {
         if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
-            return parent::critical($message, $context);
+            return false;
         }
         return $this->logMessage($message, $context, self::SEVERITY_CRITICAL);
     }
