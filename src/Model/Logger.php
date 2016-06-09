@@ -183,6 +183,9 @@ class Logger extends  \Monolog\Logger
 
     protected function logAdmin($message, array $context = array(), $severity)
     {
+        if(!is_array($message)) {
+            $message = explode('--', $message);
+        }
         if(is_array($message) && count($message) > 2) {
             $newLog = $this->logFactory->create();
             $newLog->parse($severity,$message[0], $message[1], $message[2]);
