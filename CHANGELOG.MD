@@ -14,3 +14,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Prevent logging if disabled
 
+## [20.0.5] - 2016-06-07
+### Added
+- SHQ16-1065 Support for admin logging with correct method signature
+
