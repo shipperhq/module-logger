@@ -40,8 +40,8 @@
                 <arguments>
                     <argument name="id" xsi:type="string">loggerGrid</argument>
                     <argument name="dataSource" xsi:type="object">ShipperHQ\Logger\Model\ResourceModel\Log\Collection</argument>
-                    <argument name="default_sort" xsi:type="string">noticiation_id</argument>
-                    <argument name="default_dir" xsi:type="string">ASC</argument>
+                    <argument name="default_sort" xsi:type="string">date_added</argument>
+                    <argument name="default_dir" xsi:type="string">DESC</argument>
                 </arguments>
                 <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" name="adminhtml.system.variable.grid.columnSet" as="grid.columnSet">
                     <arguments>
