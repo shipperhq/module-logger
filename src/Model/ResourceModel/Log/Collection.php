@@ -49,4 +49,26 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
         $this->_init('ShipperHQ\Logger\Model\Log', 'ShipperHQ\Logger\Model\ResourceModel\Log');
     }
 
+    /**
+     * Filter results
+     *
+     * @param bool $printQuery
+     * @param bool $logQuery
+     * @return $this
+     */
+    public function load($printQuery = false, $logQuery = false)
+    {
+        if ($this->isLoaded()) {
+            return $this;
+        }
+        $this->addRemoveFilter();
+        return parent::load($printQuery, $logQuery);
+    }
+
+    public function addRemoveFilter()
+    {
+        $this->addFieldToFilter('is_remove',0 );
+        return $this;
+    }
+
 }
