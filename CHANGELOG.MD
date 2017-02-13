@@ -1,7 +1,10 @@
 # Change Log
 
 ## [1.2.7](https://github.com/webshopapps/module-logger/tree/1.2.7) (2016-11-30)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.6...1.2.7)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.8...1.2.7)
+
+## [1.2.8](https://github.com/webshopapps/module-logger/tree/1.2.8) (2016-11-30)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.6...1.2.8)
 
 ## [1.2.6](https://github.com/webshopapps/module-logger/tree/1.2.6) (2016-08-18)
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.4...1.2.6)
@@ -10,16 +13,16 @@
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.5...1.2.4)
 
 ## [1.2.5](https://github.com/webshopapps/module-logger/tree/1.2.5) (2016-03-09)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.2...1.2.5)
-
-## [1.2.2](https://github.com/webshopapps/module-logger/tree/1.2.2) (2016-03-09)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.1...1.2.2)
-
-## [1.2.1](https://github.com/webshopapps/module-logger/tree/1.2.1) (2016-03-09)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.3...1.2.1)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.3...1.2.5)
 
 ## [1.2.3](https://github.com/webshopapps/module-logger/tree/1.2.3) (2016-03-09)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.0.2...1.2.3)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.1...1.2.3)
+
+## [1.2.1](https://github.com/webshopapps/module-logger/tree/1.2.1) (2016-03-09)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.2...1.2.1)
+
+## [1.2.2](https://github.com/webshopapps/module-logger/tree/1.2.2) (2016-03-09)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.0.2...1.2.2)
 
 ## [1.0.2](https://github.com/webshopapps/module-logger/tree/1.0.2) (2016-03-04)
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/1.0.1...1.0.2)
