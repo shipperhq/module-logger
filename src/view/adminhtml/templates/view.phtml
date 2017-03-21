@@ -2,6 +2,7 @@
     <div class="page-head">
         <h3><?php echo __('Message Details') ?></h3>
     </div>
+    <div class="button-set"><a href="<?php echo $this->getBackUrl() ?>" class="left">&laquo; <?php echo __('Back to ShipperHQ Log') ?></a></div><br />
     <div class="wsalogger-detail">
         <p><strong><?php echo __('Code:') ?></strong> <?php echo $messageData->getCode(); ?></p>
         <p><strong><?php echo __('Severity:') ?></strong> <?php echo $messageData->getSeverity(); ?></p>
