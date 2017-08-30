@@ -1,13 +1,16 @@
 # Change Log
 
-## [1.3.0](https://github.com/webshopapps/module-logger/tree/1.3.0) (2017-03-10)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.3.2...1.3.0)
-
 ## [1.3.2](https://github.com/webshopapps/module-logger/tree/1.3.2) (2017-03-10)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.3.1...1.3.2)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.3.0...1.3.2)
+
+## [1.3.0](https://github.com/webshopapps/module-logger/tree/1.3.0) (2017-03-10)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.3.1...1.3.0)
 
 ## [1.3.1](https://github.com/webshopapps/module-logger/tree/1.3.1) (2017-03-10)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.9...1.3.1)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.3.3...1.3.1)
+
+## [1.3.3](https://github.com/webshopapps/module-logger/tree/1.3.3) (2017-03-10)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.9...1.3.3)
 
 ## [1.2.9](https://github.com/webshopapps/module-logger/tree/1.2.9) (2017-02-14)
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.7...1.2.9)
