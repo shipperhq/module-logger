@@ -84,7 +84,8 @@ class View extends \Magento\Backend\Block\Widget\Form\Generic//\Magento\Backend\
         return $log;
     }
 
-    public function getBackUrl() {
+    public function getBackUrl()
+    {
         return $this->getUrl('shqlogger/*/index');
     }
 }

@@ -67,8 +67,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 
     public function addRemoveFilter()
     {
-        $this->addFieldToFilter('is_remove',0 );
+        $this->addFieldToFilter('is_remove', 0);
         return $this;
     }
-
 }

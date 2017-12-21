@@ -34,13 +34,12 @@
 
 namespace ShipperHQ\Logger\Model;
 
-
 /**
  * ShipperHQ Logger implementation
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class Logger extends  \Monolog\Logger
+class Logger extends \Monolog\Logger
 {
     const SEVERITY_CRITICAL = 1;
     const SEVERITY_MAJOR    = 2;
@@ -64,14 +63,17 @@ class Logger extends  \Monolog\Logger
      * @param HandlerInterface[] $handlers   Optional stack of handlers, the first one in the array is called first, etc.
      * @param callable[]         $processors Optional array of processors
      */
-    public function __construct(LogFactory  $logFactory,
-                                \ShipperHQ\Common\Helper\Data $dataHelper,
-                                $name, array $handlers = array(), array $processors = array())
-    {
+    public function __construct(
+        LogFactory $logFactory,
+        \ShipperHQ\Common\Helper\Data $dataHelper,
+        $name,
+        array $handlers = [],
+        array $processors = []
+    ) {
+    
         $this->logFactory = $logFactory;
         $this->helper = $dataHelper;
-        parent::__construct($name,$handlers,$processors);
-
+        parent::__construct($name, $handlers, $processors);
     }
 
     /**
@@ -83,14 +85,13 @@ class Logger extends  \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function debug($message, array $context = array())
+    public function debug($message, array $context = [])
     {
         if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
             return false;
         }
 
         return $this->logMessage($message, $context, self::SEVERITY_NOTICE);
-
     }
 
     /**
@@ -102,10 +103,10 @@ class Logger extends  \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function info($message, array $context = array())
+    public function info($message, array $context = [])
     {
         if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
-           return false;
+            return false;
         }
 
         return $this->logMessage($message, $context, self::SEVERITY_MINOR);
@@ -120,7 +121,7 @@ class Logger extends  \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function warning($message, array $context = array())
+    public function warning($message, array $context = [])
     {
         if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
             return false;
@@ -138,7 +139,7 @@ class Logger extends  \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function critical($message, array $context = array())
+    public function critical($message, array $context = [])
     {
         if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
             return false;
@@ -147,21 +148,21 @@ class Logger extends  \Monolog\Logger
     }
 
 
-    protected function logMessage($message, array $context = array(), $severity)
+    protected function logMessage($message, array $context = [], $severity)
     {
         $adminLevel = $this->helper->getConfigValue('shqlogmenu/shqlogger/admin_level');
         $systemLogLevel = $this->helper->getConfigValue('shqlogmenu/shqlogger/system_level');
         $emailLevel = $this->helper->getConfigValue('shqlogmenu/shqlogger/email_level');
 
         if ($adminLevel>0 && $adminLevel >= $severity) {
-           $this->logAdmin($message, $context, $severity);
+            $this->logAdmin($message, $context, $severity);
         }
 
         if ($systemLogLevel > 0 && $systemLogLevel >= $severity) {
-            $message = is_string($message) ? $message : var_export($message,true);
-            switch($severity) {
+            $message = is_string($message) ? $message : var_export($message, true);
+            switch ($severity) {
                 case self::SEVERITY_NOTICE:
-                    parent::debug($message ,$context);
+                    parent::debug($message, $context);
                     break;
                 case self::SEVERITY_MINOR:
                     parent::notice($message, $context);
@@ -181,19 +182,18 @@ class Logger extends  \Monolog\Logger
         return true;
     }
 
-    protected function logAdmin($message, array $context = array(), $severity)
+    protected function logAdmin($message, array $context = [], $severity)
     {
-        if(!is_array($message)) {
+        if (!is_array($message)) {
             $message = explode('--', $message);
         }
-        if(is_array($message) && count($message) > 2) {
+        if (is_array($message) && count($message) > 2) {
             $newLog = $this->logFactory->create();
-            $newLog->parse($severity,$message[0], $message[1], $message[2]);
+            $newLog->parse($severity, $message[0], $message[1], $message[2]);
         }
-
     }
 
-    protected function  logEmail($message, array $context = array(), $severity)
+    protected function logEmail($message, array $context = [], $severity)
     {
         //To Do
     }
@@ -201,9 +201,8 @@ class Logger extends  \Monolog\Logger
     protected function isDebug($moduleName)
     {
         $path = 'shqlogmenu/shq_module_log/'.$moduleName;
-        parent::debug('the path to config setting ', array($path));
+        parent::debug('the path to config setting ', [$path]);
 
         return $this->helper->getConfigValue($path) ? true : false;
     }
-
 }

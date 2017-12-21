@@ -32,6 +32,7 @@
  * See COPYING.txt for license details.
  */
 namespace ShipperHQ\Logger\Controller\Adminhtml\Logger;
+
 class Index extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
 {
     /**
@@ -50,4 +51,3 @@ class Index extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
         return $resultPage;
     }
 }
-?>

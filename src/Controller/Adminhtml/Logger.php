@@ -88,5 +88,4 @@ abstract class Logger extends Action
     {
         return $this->_authorization->isAllowed('ShipperHQ_Logger::logger');
     }
-
 }

@@ -32,6 +32,7 @@
  * See COPYING.txt for license details.
  */
 namespace ShipperHQ\Logger\Controller\Adminhtml\Logger;
+
 class View extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
 {
     /**
@@ -51,7 +52,5 @@ class View extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
         $this->_view->loadLayout();
         $this->_view->getLayout()->getBlock('shqlogger_logger_log_view')->setData('log', $model);
         $this->_view->renderLayout();
-
     }
 }
-?>

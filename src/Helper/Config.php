@@ -38,8 +38,6 @@ use ShipperHQ\Common\Model\ConfigInterface;
 use ShipperHQ\Common\Helper\AbstractConfig;
 use Psr\Log\LogLevel;
 
-
-
 /**
  * Class Config
  */
@@ -60,13 +58,13 @@ class Config extends AbstractConfig implements ConfigInterface
     public function getCodes()
     {
         return [
-            'logLevel'   =>array(
+            'logLevel'   =>[
                 self::SEVERITY_CRITICAL => __('critical'),
                 self::SEVERITY_MAJOR    => __('warning'),
                 self::SEVERITY_MINOR    => __('info'),
                 self::SEVERITY_NOTICE   => __('debug'),
                 self::SEVERITY_NONE     => __('DISABLED')
-            ),
+            ],
         ];
     }
 }

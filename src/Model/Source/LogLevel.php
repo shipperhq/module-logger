@@ -51,5 +51,4 @@ class LogLevel extends Generic
      * @var string
      */
     protected $code = 'logLevel';
-
 }

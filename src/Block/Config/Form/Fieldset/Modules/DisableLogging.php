@@ -83,24 +83,25 @@ class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
 
         $modules = $this->_moduleList->getNames();
 
-        $wsaApproved = array('webshopapps','shipperhq');
+        $wsaApproved = ['webshopapps','shipperhq'];
 
         sort($modules);
 
         $viewAllExtns = $this->_scopeConfig->isSetFlag(
             'shqlogmenu/shqlogger/view_all_extns',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
 
         foreach ($modules as $moduleName) {
-            if ($moduleName==='Mage_Adminhtml' ||$moduleName==='ShipperHQ_Common' || $moduleName==='ShipperHQ_Logger'
-                || stripos($moduleName,'Mage_') !== false) {
+            if ($moduleName==='Mage_Adminhtml' || $moduleName==='ShipperHQ_Common' || $moduleName==='ShipperHQ_Logger'
+                || stripos($moduleName, 'Mage_') !== false) {
                 continue;
             }
 
-            $providerArray = explode('_',$moduleName);
+            $providerArray = explode('_', $moduleName);
             $provider = strtolower($providerArray[0]);
 
-            if (!$viewAllExtns && !in_array($provider, $wsaApproved)){
+            if (!$viewAllExtns && !in_array($provider, $wsaApproved)) {
                 continue;
             }
             $html.= $this->_getFieldHtml($element, $moduleName);

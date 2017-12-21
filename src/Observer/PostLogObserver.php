@@ -63,38 +63,46 @@ class PostLogObserver implements ObserverInterface
     }
 
     /**
-     *Send type of logging required
+     * Send type of logging required
      *
      * @param \Magento\Framework\Event\Observer $observer
      * @return void
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE)) {
+        if (!$this->scopeConfig->getValue(
+            'shqlogmenu/shqlogger/active',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        )) {
             return ;
         }
 
-        $adminLevel = $this->scopeConfig->getValue('shqlogmenu/shqlogger/admin_level',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-        $systemLogLevel = $this->scopeConfig->getValue('shqlogmenu/shqlogger/system_level',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-        $emailLevel = $this->scopeConfig->getValue('shqlogmenu/shqlogger/email_level',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $adminLevel = $this->scopeConfig->getValue(
+            'shqlogmenu/shqlogger/admin_level',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
+        $systemLogLevel = $this->scopeConfig->getValue(
+            'shqlogmenu/shqlogger/system_level',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
+        $emailLevel = $this->scopeConfig->getValue(
+            'shqlogmenu/shqlogger/email_level',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
 
-        $code 			= $observer->getEvent()->getCode();
-        $url 			= $observer->getEvent()->getUrl();
-        $severity 		= $observer->getEvent()->getSeverity();
-        $title 			= $observer->getEvent()->getTitle();
-        $extension		= $observer->getEvent()->getExtension();
-        $description 	= $observer->getEvent()->getDescription();
+        $code           = $observer->getEvent()->getCode();
+        $url            = $observer->getEvent()->getUrl();
+        $severity       = $observer->getEvent()->getSeverity();
+        $title          = $observer->getEvent()->getTitle();
+        $extension      = $observer->getEvent()->getExtension();
+        $description    = $observer->getEvent()->getDescription();
 
         if ($adminLevel>0 && $adminLevel>=$severity) {
         //    Mage::getModel('wsalogger/log')->parse($severity,$extension,$title,$description,$code,$url);
         }
 
         if ($systemLogLevel>0 && $systemLogLevel>=$severity) {
-            switch($severity) {
+            switch ($severity) {
                 case \ShipperHQ\Logger\Helper\Log::SEVERITY_NOTICE:
                     $this->logger->debug(var_export($code.' '.$url.' - '.$extension.' - '.$title, true));
                     if (!is_null($description) && $description!='') {

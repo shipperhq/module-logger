@@ -58,5 +58,4 @@ class MassDestroy extends \ShipperHQ\Logger\Controller\Adminhtml\Logger
 
         $this->_redirect('shqlogger/*/index');
     }
-
 }

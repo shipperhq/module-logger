@@ -53,7 +53,7 @@ class Log extends AbstractModel
      */
     public function loadLatestNotice()
     {
-        $this->setData(array());
+        $this->setData([]);
         $this->getResource()->loadLatestNotice($this);
         return $this;
     }
@@ -74,21 +74,21 @@ class Log extends AbstractModel
      * @param array $data
      * @return \ShipperHQ\Logger\Model\Log
      */
-    public function parse($severity,$extension,$title,$description,$code=0,$url='')
+    public function parse($severity, $extension, $title, $description, $code = 0, $url = '')
     {
         if (is_array($description) || is_object($description)) {
             $description = print_r($description, true);
         }
 
-        $feedData[] = array(
+        $feedData[] = [
             'severity'      => $severity,
             'date_added'    => gmdate('Y-m-d H:i:s'),
             'extension'     => $extension,
             'title'         => $title,
             'description'   => $description,
-            'code'			=> $code,
-            'url'			=> $url
-        );
+            'code'          => $code,
+            'url'           => $url
+        ];
 
         return $this->getResource()->parse($this, $feedData);
     }
@@ -97,5 +97,4 @@ class Log extends AbstractModel
     {
         return $this->getResource()->truncate();
     }
-
 }

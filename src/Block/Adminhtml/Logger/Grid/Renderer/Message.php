@@ -63,9 +63,10 @@ class Message extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstrac
     public function render(\Magento\Framework\DataObject $row)
     {
         $dots = '';
-        if(strlen($row->getDescription())>512) { $dots = ' . . . '; }
+        if (strlen($row->getDescription())>512) {
+            $dots = ' . . . ';
+        }
         return '<span class="grid-row-title">' . $row->getTitle() . '</span>'
         . ($row->getDescription() ? '<br />' . substr($row->getDescription(), 0, 512) . $dots : '');
     }
 }
-

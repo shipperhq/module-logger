@@ -64,10 +64,12 @@ class Actions extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstrac
     {
         $encodedUrl = $this->_urlHelper->getEncodedUrl();
         if (!$row->getIsRead()) {
-            return sprintf('<a href="%s">%s</a> | <a href="%s" onClick="deleteConfirm(\'%s\',this.href); return false;">%s</a>',
+            return sprintf(
+                '<a href="%s">%s</a> | <a href="%s" onClick="deleteConfirm(\'%s\',this.href); return false;">%s</a>',
                 $this->getUrl(
                     '*/*/markAsRead/',
-                    ['_current' => true, 'id' => $row->getId()] ),
+                    ['_current' => true, 'id' => $row->getId()]
+                ),
                 __('Mark as Read'),
                 $this->getUrl(
                     '*/*/remove/',
@@ -80,9 +82,9 @@ class Actions extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstrac
                 __('Are you sure?'),
                 __('Remove')
             );
-        }
-        else {
-            return sprintf('<a href="%s" onClick="deleteConfirm(\'%s\',this.href); return false;">%s</a>',
+        } else {
+            return sprintf(
+                '<a href="%s" onClick="deleteConfirm(\'%s\',this.href); return false;">%s</a>',
                 $this->getUrl(
                     '*/*/remove/',
                     [
@@ -98,4 +100,3 @@ class Actions extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstrac
         return parent::render($row);
     }
 }
-

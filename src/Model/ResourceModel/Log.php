@@ -34,7 +34,6 @@
 
 namespace ShipperHQ\Logger\Model\ResourceModel;
 
-
 class Log extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
     /**
@@ -69,13 +68,13 @@ class Log extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     {
         $connection = $this->getConnection();
         $select = $connection->select()
-            ->from($this->getMainTable(), array(
+            ->from($this->getMainTable(), [
                 'severity'     => 'severity',
-                'count_notice' => 'COUNT(' . $this->getIdFieldName() . ')'))
+                'count_notice' => 'COUNT(' . $this->getIdFieldName() . ')'])
             ->group('severity')
             ->where('is_remove=?', 0)
             ->where('is_read=?', 0);
-        $return = array();
+        $return = [];
         $rowSet = $connection->fetchAll($select);
         foreach ($rowSet as $row) {
             $return[$row['severity']] = $row['count_notice'];
@@ -96,8 +95,7 @@ class Log extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
         $connection = $this->getConnection();
         try {
             $connection->truncateTable($this->getMainTable());
-        }
-        catch(\Exception $e){
+        } catch (\Exception $e) {
             //TODO
           //  Mage::logException("ShipperHQ Logger Exception");
           //  Mage::logException($e);

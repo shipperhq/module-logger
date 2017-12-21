@@ -42,5 +42,4 @@ class Grid extends WidgetGrid
      * @var string
      */
     protected $_template = 'ShipperHQ_Logger::grid.phtml';
-
 }
