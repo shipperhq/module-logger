@@ -16,7 +16,10 @@
             "name": "Zowta LLC"
         }
     ],
-
+    "require": {
+        "magento/framework": "^100.0",
+        "shipperhq/module-common": "*"
+    },
     "support": {
         "documentation": "http://docs.shipperhq.com"
     },

@@ -1,11 +1,21 @@
 # Change Log
 
+## [20.3.0](https://github.com/webshopapps/module-logger/tree/20.3.0) (2018-03-21)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/20.2.0...20.3.0)
+
+**Merged pull requests:**
+
+- SHQ18-112 Remove dependency on Common\Helper\Data [\#2](https://github.com/webshopapps/module-logger/pull/2) ([wsagen](https://github.com/wsagen))
+
 ## [20.2.0](https://github.com/webshopapps/module-logger/tree/20.2.0) (2017-12-01)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/20.1.1...20.2.0)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/20.1.2...20.2.0)
 
 **Merged pull requests:**
 
 - SHQ16-2432 Code sniffer changes [\#1](https://github.com/webshopapps/module-logger/pull/1) ([wsagen](https://github.com/wsagen))
+
+## [20.1.2](https://github.com/webshopapps/module-logger/tree/20.1.2) (2017-03-10)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/20.1.1...20.1.2)
 
 ## [20.1.1](https://github.com/webshopapps/module-logger/tree/20.1.1) (2017-03-10)
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/20.1.0...20.1.1)
@@ -14,10 +24,7 @@
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/20.1.3...20.1.0)
 
 ## [20.1.3](https://github.com/webshopapps/module-logger/tree/20.1.3) (2017-03-10)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/20.1.2...20.1.3)
-
-## [20.1.2](https://github.com/webshopapps/module-logger/tree/20.1.2) (2017-03-10)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.9...20.1.2)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.9...20.1.3)
 
 ## [1.2.9](https://github.com/webshopapps/module-logger/tree/1.2.9) (2017-02-14)
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.8...1.2.9)

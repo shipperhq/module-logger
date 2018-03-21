@@ -34,6 +34,8 @@
 
 namespace ShipperHQ\Logger\Model;
 
+use \Magento\Framework\App\Config\ScopeConfigInterface;
+
 /**
  * ShipperHQ Logger implementation
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
@@ -48,9 +50,9 @@ class Logger extends \Monolog\Logger
     const SEVERITY_NONE     = -1;
 
     /**
-     * @var  \ShipperHQ\Common\Helper\Data
+     * @var  \Magento\Framework\App\Config\ScopeConfigInterface
      */
-    private $helper;
+    private $scopeConfig;
     /**
      * @var \ShipperHQ\Shipper\Model\SynchronizeFactory
      */
@@ -58,21 +60,21 @@ class Logger extends \Monolog\Logger
 
     /**
      * @param LogFactory         $logFactory
-     * @param \ShipperHQ\Common\Helper\Data $dataHelper
+     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
      * @param string             $name       The logging channel
      * @param HandlerInterface[] $handlers   Optional stack of handlers, the first one in the array is called first, etc.
      * @param callable[]         $processors Optional array of processors
      */
     public function __construct(
         LogFactory $logFactory,
-        \ShipperHQ\Common\Helper\Data $dataHelper,
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         $name,
         array $handlers = [],
         array $processors = []
     ) {
-    
+
         $this->logFactory = $logFactory;
-        $this->helper = $dataHelper;
+        $this->scopeConfig = $scopeConfig;
         parent::__construct($name, $handlers, $processors);
     }
 
@@ -87,7 +89,7 @@ class Logger extends \Monolog\Logger
      */
     public function debug($message, array $context = [])
     {
-        if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
+        if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
             return false;
         }
 
@@ -105,7 +107,7 @@ class Logger extends \Monolog\Logger
      */
     public function info($message, array $context = [])
     {
-        if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
+        if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
             return false;
         }
 
@@ -123,7 +125,7 @@ class Logger extends \Monolog\Logger
      */
     public function warning($message, array $context = [])
     {
-        if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
+        if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
             return false;
         }
 
@@ -141,7 +143,7 @@ class Logger extends \Monolog\Logger
      */
     public function critical($message, array $context = [])
     {
-        if (!$this->helper->getConfigValue('shqlogmenu/shqlogger/active')) {
+        if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
             return false;
         }
         return $this->logMessage($message, $context, self::SEVERITY_CRITICAL);
@@ -150,9 +152,9 @@ class Logger extends \Monolog\Logger
 
     protected function logMessage($message, array $context = [], $severity)
     {
-        $adminLevel = $this->helper->getConfigValue('shqlogmenu/shqlogger/admin_level');
-        $systemLogLevel = $this->helper->getConfigValue('shqlogmenu/shqlogger/system_level');
-        $emailLevel = $this->helper->getConfigValue('shqlogmenu/shqlogger/email_level');
+        $adminLevel = $this->scopeConfig->getValue('shqlogmenu/shqlogger/admin_level');
+        $systemLogLevel = $this->scopeConfig->getValue('shqlogmenu/shqlogger/system_level');
+        $emailLevel = $this->scopeConfig->getValue('shqlogmenu/shqlogger/email_level');
 
         if ($adminLevel>0 && $adminLevel >= $severity) {
             $this->logAdmin($message, $context, $severity);
@@ -203,6 +205,6 @@ class Logger extends \Monolog\Logger
         $path = 'shqlogmenu/shq_module_log/'.$moduleName;
         parent::debug('the path to config setting ', [$path]);
 
-        return $this->helper->getConfigValue($path) ? true : false;
+        return $this->scopeConfig->getValue($path) ? true : false;
     }
 }
