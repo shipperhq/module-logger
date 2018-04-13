@@ -1,5 +1,12 @@
 # Change Log
 
+## [20.3.2](https://github.com/webshopapps/module-logger/tree/20.3.2) (2018-04-13)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/20.3.1...20.3.2)
+
+**Merged pull requests:**
+
+- SHQ18-196 Add missing composer version [\#4](https://github.com/webshopapps/module-logger/pull/4) ([TravisBernard](https://github.com/TravisBernard))
+
 ## [20.3.1](https://github.com/webshopapps/module-logger/tree/20.3.1) (2018-04-03)
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/20.3.0...20.3.1)
 
@@ -46,13 +53,13 @@
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.2...1.2.6)
 
 ## [1.2.2](https://github.com/webshopapps/module-logger/tree/1.2.2) (2016-03-09)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.5...1.2.2)
-
-## [1.2.5](https://github.com/webshopapps/module-logger/tree/1.2.5) (2016-03-09)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.1...1.2.5)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.1...1.2.2)
 
 ## [1.2.1](https://github.com/webshopapps/module-logger/tree/1.2.1) (2016-03-09)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.4...1.2.1)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.5...1.2.1)
+
+## [1.2.5](https://github.com/webshopapps/module-logger/tree/1.2.5) (2016-03-09)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.4...1.2.5)
 
 ## [1.2.4](https://github.com/webshopapps/module-logger/tree/1.2.4) (2016-03-09)
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.3...1.2.4)
