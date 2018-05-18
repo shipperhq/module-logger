@@ -1,5 +1,8 @@
 # Change Log
 
+## [20.3.3](https://github.com/webshopapps/module-logger/tree/20.3.3) (2018-05-18)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/20.3.2...20.3.3)
+
 ## [20.3.2](https://github.com/webshopapps/module-logger/tree/20.3.2) (2018-04-13)
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/20.3.1...20.3.2)
 
@@ -41,13 +44,13 @@
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.9...20.1.0)
 
 ## [1.2.9](https://github.com/webshopapps/module-logger/tree/1.2.9) (2017-02-14)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.8...1.2.9)
-
-## [1.2.8](https://github.com/webshopapps/module-logger/tree/1.2.8) (2016-11-30)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.7...1.2.8)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.7...1.2.9)
 
 ## [1.2.7](https://github.com/webshopapps/module-logger/tree/1.2.7) (2016-11-30)
-[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.6...1.2.7)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.8...1.2.7)
+
+## [1.2.8](https://github.com/webshopapps/module-logger/tree/1.2.8) (2016-11-30)
+[Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.6...1.2.8)
 
 ## [1.2.6](https://github.com/webshopapps/module-logger/tree/1.2.6) (2016-08-18)
 [Full Changelog](https://github.com/webshopapps/module-logger/compare/1.2.2...1.2.6)
