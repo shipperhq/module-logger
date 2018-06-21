@@ -34,14 +34,12 @@
 
 namespace ShipperHQ\Logger\Helper;
 
-use ShipperHQ\Common\Model\ConfigInterface;
-use ShipperHQ\Common\Helper\AbstractConfig;
 use Psr\Log\LogLevel;
 
 /**
  * Class Config
  */
-class Config extends AbstractConfig implements ConfigInterface
+class Config
 {
     const SEVERITY_CRITICAL = 1;
     const SEVERITY_MAJOR    = 2;
@@ -66,5 +64,28 @@ class Config extends AbstractConfig implements ConfigInterface
                 self::SEVERITY_NONE     => __('DISABLED')
             ],
         ];
+    }
+
+    /**
+     * Get configuration data of carrier
+     *
+     * @param string $type
+     * @param string $code
+     * @return array|string|false
+     */
+    public function getCode($type, $code = '')
+    {
+        $codes = $this->getCodes();
+        if (!isset($codes[$type])) {
+            return false;
+        } elseif ('' === $code) {
+            return $codes[$type];
+        }
+
+        if (!isset($codes[$type][$code])) {
+            return false;
+        } else {
+            return $codes[$type][$code];
+        }
     }
 }
