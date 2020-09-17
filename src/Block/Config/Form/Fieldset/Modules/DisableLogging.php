@@ -19,20 +19,22 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * Shipper HQ Shipping
- *
  * @category ShipperHQ
  * @package ShipperHQ_Logger
- * @copyright Copyright (c) 2015 Zowta LLC (http://www.ShipperHQ.com)
+ * @copyright Copyright (c) 2019 Zowta LTD and Zowta LLC (http://www.ShipperHQ.com)
  * @license http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @author ShipperHQ Team sales@shipperhq.com
  */
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
+
 namespace ShipperHQ\Logger\Block\Config\Form\Fieldset\Modules;
 
+/*
+ * Class for dynamically rendering Logging Enabled/Disabled switches per extension under Advanced/ShipperHQ Logger
+ *
+ * @deprecated 20.4.0. Admin section to enable/disable logging per extension removed. Logger will log everything if active
+ *
+ * @see Magento\Config\Block\System\Config\Form\Fieldset\Modules\DisableOutput
+ */
 class DisableLogging extends \Magento\Config\Block\System\Config\Form\Fieldset
 {
     /**

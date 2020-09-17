@@ -3,3 +3,7 @@
 SHQ18-331 remove module-common dependency
 
 
+## 20.5.0 (2020-09-17)
+MNB-657 Remove logging per extension switches
+
+
