@@ -7,3 +7,7 @@ SHQ18-331 remove module-common dependency
 MNB-657 Remove logging per extension switches
 
 
+## 20.6.0 (2022-02-18)
+MNB-5 Move to declarative schema
+
+

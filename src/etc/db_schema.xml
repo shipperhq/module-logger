@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="shqlogger_log" resource="default" engine="innodb" comment="ShipperHQ Logger data table">
+    <column xsi:type="int" name="notification_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Notification ID"/>
+    <column xsi:type="smallint" name="severity" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Severity"/>
+    <column xsi:type="datetime" name="date_added" on_update="false" nullable="false" comment="Date added"/>
+    <column xsi:type="text" name="extension" nullable="false" comment="Extension"/>
+    <column xsi:type="text" name="title" nullable="false" comment="Log title"/>
+    <column xsi:type="text" name="description" nullable="true" comment="Log description"/>
+    <column xsi:type="text" name="code" nullable="true" comment="Code"/>
+    <column xsi:type="text" name="url" nullable="true" comment="URL"/>
+    <column xsi:type="smallint" name="is_read" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Has been read"/>
+    <column xsi:type="smallint" name="is_remove" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="To be removed"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="notification_id"/>
+    </constraint>
+    <index referenceId="SHQLOGGER_LOG_SEVERITY" indexType="btree">
+      <column name="severity"/>
+    </index>
+    <index referenceId="SHQLOGGER_LOG_IS_READ" indexType="btree">
+      <column name="is_read"/>
+    </index>
+    <index referenceId="SHQLOGGER_LOG_IS_REMOVE" indexType="btree">
+      <column name="is_remove"/>
+    </index>
+  </table>
+</schema>
