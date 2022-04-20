@@ -81,13 +81,13 @@ class Logger extends \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function debug($message, array $context = [])
+    public function debug($message, array $context = []) : void
     {
         if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
-            return false;
+            return;
         }
 
-        return $this->logMessage($message, $context, self::SEVERITY_NOTICE);
+        $this->logMessage($message, $context, self::SEVERITY_NOTICE);
     }
 
     /**
@@ -99,13 +99,13 @@ class Logger extends \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function info($message, array $context = [])
+    public function info($message, array $context = []) : void
     {
         if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
-            return false;
+            return;
         }
 
-        return $this->logMessage($message, $context, self::SEVERITY_MINOR);
+        $this->logMessage($message, $context, self::SEVERITY_MINOR);
     }
 
     /**
@@ -117,13 +117,13 @@ class Logger extends \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function warning($message, array $context = [])
+    public function warning($message, array $context = []) : void
     {
         if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
-            return false;
+            return;
         }
 
-        return $this->logMessage($message, $context, self::SEVERITY_MAJOR);
+        $this->logMessage($message, $context, self::SEVERITY_MAJOR);
     }
 
     /**
@@ -135,12 +135,12 @@ class Logger extends \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function critical($message, array $context = [])
+    public function critical($message, array $context = []) : void
     {
         if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
-            return false;
+            return;
         }
-        return $this->logMessage($message, $context, self::SEVERITY_CRITICAL);
+        $this->logMessage($message, $context, self::SEVERITY_CRITICAL);
     }
 
 
