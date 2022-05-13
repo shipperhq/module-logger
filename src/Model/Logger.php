@@ -81,13 +81,13 @@ class Logger extends \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function debug($message, array $context = [])
+    public function debug($message, array $context = []): void
     {
         if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
-            return false;
+            return;
         }
 
-        return $this->logMessage($message, $context, self::SEVERITY_NOTICE);
+        $this->logMessage($message, $context, self::SEVERITY_NOTICE);
     }
 
     /**
@@ -99,13 +99,13 @@ class Logger extends \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function info($message, array $context = [])
+    public function info($message, array $context = []): void
     {
         if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
-            return false;
+            return;
         }
 
-        return $this->logMessage($message, $context, self::SEVERITY_MINOR);
+        $this->logMessage($message, $context, self::SEVERITY_MINOR);
     }
 
     /**
@@ -117,13 +117,13 @@ class Logger extends \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function warning($message, array $context = [])
+    public function warning($message, array $context = []): void
     {
         if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
-            return false;
+            return;
         }
 
-        return $this->logMessage($message, $context, self::SEVERITY_MAJOR);
+        $this->logMessage($message, $context, self::SEVERITY_MAJOR);
     }
 
     /**
@@ -135,16 +135,16 @@ class Logger extends \Monolog\Logger
      * @param  array   $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function critical($message, array $context = [])
+    public function critical($message, array $context = []): void
     {
         if (!$this->scopeConfig->getValue('shqlogmenu/shqlogger/active')) {
-            return false;
+            return;
         }
-        return $this->logMessage($message, $context, self::SEVERITY_CRITICAL);
+        $this->logMessage($message, $context, self::SEVERITY_CRITICAL);
     }
 
 
-    protected function logMessage($message, array $context = [], $severity)
+    protected function logMessage($message, array $context, $severity)
     {
         $adminLevel = $this->scopeConfig->getValue('shqlogmenu/shqlogger/admin_level');
         $systemLogLevel = $this->scopeConfig->getValue('shqlogmenu/shqlogger/system_level');
@@ -175,13 +175,12 @@ class Logger extends \Monolog\Logger
         if ($emailLevel>0 && $emailLevel >= $severity) {
             $this->logEmail($message, $context, $severity);
         }
-        return true;
     }
 
-    protected function logAdmin($message, array $context = [], $severity)
+    protected function logAdmin($message, array $context, $severity)
     {
         if (!is_array($message)) {
-            $message = explode('--', $message);
+            $message = explode('--', (string) $message);
         }
         if (is_array($message) && count($message) > 2) {
             $newLog = $this->logFactory->create();
@@ -189,7 +188,7 @@ class Logger extends \Monolog\Logger
         }
     }
 
-    protected function logEmail($message, array $context = [], $severity)
+    protected function logEmail($message, array $context, $severity)
     {
         //To Do
     }

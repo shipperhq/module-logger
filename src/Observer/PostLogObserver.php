@@ -3,21 +3,21 @@
  *
  * ShipperHQ
  *
- * NOTICE OF LICENSE	
+ * NOTICE OF LICENSE
  *
- * This source file is subject to the Open Software License (OSL 3.0)	
- * that is bundled with this package in the file LICENSE.txt.	
- * It is also available through the world-wide-web at this URL:	
- * http://opensource.org/licenses/osl-3.0.php	
- * If you did not receive a copy of the license and are unable to	
- * obtain it through the world-wide-web, please send an email	
- * to license@magentocommerce.com so we can send you a copy immediately.	
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
  *
- * DISCLAIMER	
+ * DISCLAIMER
  *
- * Do not edit or add to this file if you wish to upgrade Magento to newer	
- * versions in the future. If you wish to customize Magento for your	
- * needs please refer to http://www.magentocommerce.com for more information.	
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category ShipperHQ
  * @package ShipperHQ_Logger
@@ -100,25 +100,25 @@ class PostLogObserver implements ObserverInterface
             switch ($severity) {
                 case \ShipperHQ\Logger\Helper\Log::SEVERITY_NOTICE:
                     $this->logger->debug(var_export($code.' '.$url.' - '.$extension.' - '.$title, true));
-                    if (!is_null($description) && $description!='') {
+                    if ($description !== null && $description != '') {
                         $this->logger->debug(var_export($description, true));
                     }
                     break;
                 case \ShipperHQ\Logger\Helper\Log::SEVERITY_MINOR:
                     $this->logger->info(var_export($code.' '.$url.' - '.$extension.' - '.$title, true));
-                    if (!is_null($description) && $description!='') {
+                    if ($description !== null && $description != '') {
                         $this->logger->info(var_export($description, true));
                     }
                     break;
                 case \ShipperHQ\Logger\Helper\Log::SEVERITY_MAJOR:
                     $this->logger->warning(var_export($code.' '.$url.' - '.$extension.' - '.$title, true));
-                    if (!is_null($description) && $description!='') {
+                    if ($description !== null && $description != '') {
                         $this->logger->warning(var_export($description, true));
                     }
                     break;
                 case \ShipperHQ\Logger\Helper\Log::SEVERITY_CRITICAL:
                     $this->logger->critical(var_export($code.' '.$url.' - '.$extension.' - '.$title, true));
-                    if (!is_null($description) && $description!='') {
+                    if ($description !== null && $description != '') {
                         $this->logger->critical(var_export($description, true));
                     }
                     break;

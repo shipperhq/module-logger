@@ -11,3 +11,7 @@ MNB-657 Remove logging per extension switches
 MNB-5 Move to declarative schema
 
 
+## 20.7.0 (2022-05-13)
+MNB-2430 M2.4.4 compatibility
+
+

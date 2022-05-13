@@ -1,23 +1,23 @@
 <?php
 /**
  *
- * ShipperHQ	
+ * ShipperHQ
  *
- * NOTICE OF LICENSE	
+ * NOTICE OF LICENSE
  *
- * This source file is subject to the Open Software License (OSL 3.0)	
- * that is bundled with this package in the file LICENSE.txt.	
- * It is also available through the world-wide-web at this URL:	
- * http://opensource.org/licenses/osl-3.0.php	
- * If you did not receive a copy of the license and are unable to	
- * obtain it through the world-wide-web, please send an email	
- * to license@magentocommerce.com so we can send you a copy immediately.	
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
  *
- * DISCLAIMER	
+ * DISCLAIMER
  *
- * Do not edit or add to this file if you wish to upgrade Magento to newer	
- * versions in the future. If you wish to customize Magento for your	
- * needs please refer to http://www.magentocommerce.com for more information.	
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category ShipperHQ
  * @package ShipperHQ_Logger
@@ -25,13 +25,14 @@
  * @license http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @author ShipperHQ Team sales@shipperhq.com
  */
+/** @var $block \ShipperHQ\Logger\Block\Adminhtml\Logger\View */
 ?>
 
-<?php if($messageData = $this->getMessageData()): ?>
+<?php if($messageData = $block->getMessageData()): ?>
     <div class="page-head">
         <h3><?php echo __('Message Details') ?></h3>
     </div>
-    <div class="button-set"><a href="<?php echo $this->getBackUrl() ?>" class="left">&laquo; <?php echo __('Back to ShipperHQ Log') ?></a></div><br />
+    <div class="button-set"><a href="<?php echo $block->getBackUrl() ?>" class="left">&laquo; <?php echo __('Back to ShipperHQ Log') ?></a></div><br />
     <div class="wsalogger-detail">
         <p><strong><?php echo __('Code:') ?></strong> <?php echo $messageData->getCode(); ?></p>
         <p><strong><?php echo __('Severity:') ?></strong> <?php echo $messageData->getSeverity(); ?></p>
@@ -43,5 +44,5 @@
         </div>
     </div>
     <br />
-    <div class="button-set"><a href="<?php echo $this->getBackUrl() ?>" class="left">&laquo; <?php echo __('Back to ShipperHQ Log') ?></a></div><br />
+    <div class="button-set"><a href="<?php echo $block->getBackUrl() ?>" class="left">&laquo; <?php echo __('Back to ShipperHQ Log') ?></a></div><br />
 <?php endif; ?>
