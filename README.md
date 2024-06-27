@@ -15,18 +15,32 @@ Facts
 
 Compatibility
 -------------
-- Magento >= 2.0 (Includes 2.2) 
-- Supports both Magento Open Source (Community) and Magento Commerce (Enterprise) 
+This module supports and is tested against the following Magento versions:
 
-This library aims to support and is tested against the following PHP
-implementations:
+* 2.4.7-beta1
+* 2.4.6-p1
+* 2.4.6
+* 2.4.5-p3
+* 2.4.5-p2
+* 2.4.5-p1
+* 2.4.5
+* 2.4.4-p4
+* 2.4.4-p3
+* 2.4.4-p2
+* 2.4.4-p1
+* 2.4.4
+* 2.4.3-p3
+* 2.4.3-p2
+* 2.4.3
+* 2.4.2
+* 2.4.1
+* 2.4.0
 
-* PHP 5.5
-* PHP 5.6
-* PHP 5.7
-* PHP 7.x (Please consult [Magento 2 requirements](http://devdocs.magento.com/magento-system-requirements.html) for any exceptions)
+per the [official Magento 2 requirements](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html)
 
-Enforced in the composer.json
+Supports both Magento Opensource (Community) and Magento Commerce (Enterprise)
+
+Compatibility with earlier editions is possible but not maintained.
 
 Installation Instructions
 -------------------------
@@ -49,14 +63,12 @@ Any contribution is highly appreciated. The best way to contribute code is to op
 
 License
 -------
-Copyright (c) 2015 Zowta LLC & Zowta Ltd. See [LICENSE][] for
-details.
+Copyright (c) 2015 Zowta LLC & Zowta Ltd. See [LICENSE] for details.
 
-We also dutifully respect the [Magento][] OSL license, which is included in this codebase.
+We also dutifully respect the [Magento] OSL license.
 
-
-[license]: LICENSE.md
-[magento]: Magento2_LICENSE.md
+[license]: LICENSE.txt
+[Magento]: https://github.com/magento/magento2/blob/2.4-develop/LICENSE.txt
 
 Copyright
 ---------

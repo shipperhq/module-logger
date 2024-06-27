@@ -15,3 +15,7 @@ MNB-5 Move to declarative schema
 MNB-2430 M2.4.4 compatibility
 
 
+## 20.7.1 (2024-06-27)
+SHQ23-1281 Fix security linter warnings
+
+
