@@ -19,3 +19,7 @@ MNB-2430 M2.4.4 compatibility
 SHQ23-1281 Fix security linter warnings
 
 
+## 20.7.2 (2026-05-29)
+ENG26-26 Modernise copyrights and namespaces. Update readme
+
+
